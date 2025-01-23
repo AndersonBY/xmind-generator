@@ -143,11 +143,11 @@ export interface RootTopicBuilder extends BaseTopicBuilder {
   summaries: (summaries: ReadonlyArray<SummaryBuilder>) => this
 }
 
-export interface SummaryBuilder extends BaseTopicBuilder {}
+export interface SummaryBuilder extends BaseTopicBuilder { }
 export interface SheetBuilder {
   rootTopic: (topicBuilder: TopicBuilder) => this
   relationships: (relationships: ReadonlyArray<RelationshipBuilder>) => this
   title: (sheetTitle: string) => this
 }
 
-export interface RelationshipBuilder {}
+export interface RelationshipBuilder { }

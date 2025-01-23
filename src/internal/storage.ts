@@ -36,27 +36,12 @@ function fileExtname(fileName: string) {
 }
 
 async function generateSHA256Hash(data: ResourceData) {
-  if (typeof window !== 'undefined' && typeof crypto !== 'undefined') {
-    const encoder = new TextEncoder()
-    const dataBuffer = typeof data === 'string' ? encoder.encode(data) : data
+  const encoder = new TextEncoder();
+  const dataBuffer = typeof data === 'string' ? encoder.encode(data) : data;
 
-    return crypto.subtle.digest('SHA-256', dataBuffer).then(hashBuffer => {
-      const hashArray = Array.from(new Uint8Array(hashBuffer))
-      const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('')
-      return hashHex
-    })
-  } else {
-    const crypto = await import('crypto')
-    const hash = crypto.createHash('sha256')
-
-    if (data instanceof ArrayBuffer) {
-      const textDecoder = new TextDecoder('utf-8')
-      const text = textDecoder.decode(data)
-      hash.update(text)
-    } else {
-      hash.update(Buffer.from(data))
-    }
-
-    return hash.digest('hex')
-  }
+  return crypto.subtle.digest('SHA-256', dataBuffer).then(hashBuffer => {
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+  });
 }
