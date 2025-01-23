@@ -1,5 +1,5 @@
 {
-  "name": "xmind-generator",
+  "name": "@makerbi/xmind-generator",
   "version": "1.0.1",
   "type": "module",
   "engines": {
@@ -23,10 +23,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/xmindltd/xmind-generator.git"
+    "url": "https://github.com/AndersonBY/xmind-generator.git"
   },
   "bugs": {
-    "url": "https://github.com/xmindltd/xmind-generator/issues"
+    "url": "https://github.com/AndersonBY/xmind-generator/issues"
   },
   "keywords": [
     "xmind-generator",
